@@ -1,0 +1,47 @@
+<?xml version="1" encoding="UTF-8"?>
+<GAO_CONFIG>
+    <Version>3.0</Version>
+    <Mode>Lite</Mode>
+    <AoCore_Lite index="0" sample_clock="clk" trig_type="0" capture_amount="1024" implemention="0" input_register_enabled="0" capture_init_data_enabled="0" module_name="uartRX">
+        <SignalList>
+            <Signal capture_enable="true">eHalfBit</Signal>
+            <Bus capture_enable="true" name="shiftReg[8:0]">
+                <Signal>shiftReg[8]</Signal>
+                <Signal>shiftReg[7]</Signal>
+                <Signal>shiftReg[6]</Signal>
+                <Signal>shiftReg[5]</Signal>
+                <Signal>shiftReg[4]</Signal>
+                <Signal>shiftReg[3]</Signal>
+                <Signal>shiftReg[2]</Signal>
+                <Signal>shiftReg[1]</Signal>
+                <Signal>shiftReg[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="cBaudRate[11:0]">
+                <Signal>cBaudRate[11]</Signal>
+                <Signal>cBaudRate[10]</Signal>
+                <Signal>cBaudRate[9]</Signal>
+                <Signal>cBaudRate[8]</Signal>
+                <Signal>cBaudRate[7]</Signal>
+                <Signal>cBaudRate[6]</Signal>
+                <Signal>cBaudRate[5]</Signal>
+                <Signal>cBaudRate[4]</Signal>
+                <Signal>cBaudRate[3]</Signal>
+                <Signal>cBaudRate[2]</Signal>
+                <Signal>cBaudRate[1]</Signal>
+                <Signal>cBaudRate[0]</Signal>
+            </Bus>
+            <Bus capture_enable="true" name="cHalfBit[6:0]">
+                <Signal>cHalfBit[6]</Signal>
+                <Signal>cHalfBit[5]</Signal>
+                <Signal>cHalfBit[4]</Signal>
+                <Signal>cHalfBit[3]</Signal>
+                <Signal>cHalfBit[2]</Signal>
+                <Signal>cHalfBit[1]</Signal>
+                <Signal>cHalfBit[0]</Signal>
+            </Bus>
+            <Signal capture_enable="true">eCFrame</Signal>
+            <Signal capture_enable="true">eCFramer</Signal>
+        </SignalList>
+    </AoCore_Lite>
+    <GAO_ID>1000010100101101</GAO_ID>
+</GAO_CONFIG>
