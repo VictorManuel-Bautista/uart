@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../TangNano/src/TangNanoTop.vhd" \
+"../../../../../src/uartRX.vhd" \
+"../../../../../tb/uartRX_tb.vhd" \
+
+# Do not sort compile order
+nosort

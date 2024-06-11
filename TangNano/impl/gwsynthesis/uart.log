@@ -2,37 +2,16 @@ GowinSynthesis start
 Running parser ...
 Analyzing VHDL file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd'
 Analyzing entity 'uartrx'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":6)
-Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":21)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v'
-Analyzing included file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Back to file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v'
-Analyzing included file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Back to file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v'
-Analyzing included file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Back to file '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Analyzing Verilog file 'C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\gw_jtag.v'
-Analyzing Verilog file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\RTL_GAO\gw_gao_top.v'
-Processing 'uartRX(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":6)
-Compiling module 'gw_gao'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\RTL_GAO\gw_gao_top.v":1)
-Compiling module 'GW_JTAG'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\gw_jtag.v":1)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_CON\gw_con_top.v":367)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-WARN  (EX3791) : Expression size ** truncated to fit in target size **("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_top.v":684)
-Compiling module '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Extracting RAM for identifier '**'("C:\Gowin\Gowin_V1.9.9.03_x64\IDE\data\ipcores\GAO_LITE\GW_AO_0\gw_ao_mem_ctrl.v":133)
-Trying to combine GAO to RTL design
-NOTE  (EX0101) : Current top module is "uartRX"
-WARN  (EX0211) : The output port "dataOut[7]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[6]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[5]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[4]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[3]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[2]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[1]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
-WARN  (EX0211) : The output port "dataOut[0]" of module "uartRX" has no driver, assigning undriven bits to Z, simulation mismatch possible("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":17)
+Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":22)
+Analyzing VHDL file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd'
+Analyzing entity 'tangnanotop'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":5)
+Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":16)
+Processing 'TangNanoTop(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":5)
+Processing 'uartRX(stopbit=1,baudrate=9600)(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":6)
+NOTE  (EX0101) : Current top module is "TangNanoTop"
 [5%] Running netlist conversion ...
+WARN  (CV0016) : Input clk is unused("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":7)
+WARN  (CV0016) : Input nrst is unused("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":8)
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
 [15%] Optimizing Phase 1 completed
@@ -48,6 +27,7 @@ Running technical mapping ...
 [75%] Tech-Mapping Phase 2 completed
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
+WARN  (NL0002) : The module "uartRX" instantiated to "UART" is swept in optimizing("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd":43)
 [95%] Generate netlist file "C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\uart.vg" completed
 [100%] Generate report file "C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\uart_syn.rpt.html" completed
 GowinSynthesis finish

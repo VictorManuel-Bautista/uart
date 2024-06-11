@@ -8,4 +8,4 @@ set UARTsrc_path ${UARTProject_path}/src
 add_file -type cst ${GoWinProject_path}/GoWinUART.cst
 
 # Source vhdl files
-add_file -type vhdl ${UARTsrc_path}/uartRX.vhd
+add_file -type vhdl ../src/uartRX.vhd

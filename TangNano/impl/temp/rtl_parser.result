@@ -1,10 +1,20 @@
 [
  {
-  "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
-  "InstLine" : 6,
-  "InstName" : "uartRX",
-  "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
-  "ModuleLine" : 6,
-  "ModuleName" : "uartRX"
+  "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+  "InstLine" : 5,
+  "InstName" : "TangNanoTop",
+  "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+  "ModuleLine" : 5,
+  "ModuleName" : "TangNanoTop",
+  "SubInsts" : [
+   {
+    "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+    "InstLine" : 43,
+    "InstName" : "UART",
+    "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
+    "ModuleLine" : 6,
+    "ModuleName" : "uartRX"
+   }
+  ]
  }
 ]

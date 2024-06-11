@@ -5,6 +5,11 @@
    "Library" : "work",
    "Path" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
    "Type" : "vhdl"
+  },
+  {
+   "Library" : "work",
+   "Path" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+   "Type" : "vhdl"
   }
  ],
  "IncludePath" : [
@@ -12,7 +17,7 @@
  ],
  "LoopLimit" : 2000,
  "ResultFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/impl/temp/rtl_parser.result",
- "Top" : "uartRX",
+ "Top" : "TangNanoTop",
  "VerilogStd" : "verilog_2001",
  "VhdlStd" : "vhdl_2008"
 }

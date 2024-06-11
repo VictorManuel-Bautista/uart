@@ -13,6 +13,7 @@ generic(
 );
 port(
     clk: in std_logic;
+    rst: in std_logic;
     rx:  in std_logic;
     dataOut: out std_logic_vector(DATABITS-1 downto 0)
 );
@@ -37,43 +38,50 @@ end;
 
 constant FRAMEBITS : integer := 1 + DATABITS + PARITYBIT + STOPBIT;
 constant FRAMECYCLES : integer := FCLKMHZ * 1000000 * FRAMEBITS / BAUDRATE;
+constant SYMBOLCYCLES : integer := FCLKMHZ * 1000000 / BAUDRATE;
 constant HALFSYMBOLCYCLES : integer := FCLKMHZ * 1000000 / (BAUDRATE * 2);
 
-signal eHalfBit : std_logic;
 signal eCFrame, eCFramer : std_logic;
-signal cBaudRate : unsigned(log2(FRAMECYCLES)-1 downto 0);
-signal cHalfBit : unsigned(log2(HALFSYMBOLCYCLES)-1 downto 0);
+signal eHalfBit : std_logic;
+signal cSymbolCycles : unsigned(log2(SYMBOLCYCLES)-1 downto 0);
+signal cFrameSymbols : unsigned(log2(FRAMEBITS)-1 downto 0);
 signal shiftReg : std_logic_vector(FRAMEBITS - 1 downto 0);
 
 begin
 
 -- '1' during the frame
-eCFramer <= eCFrame when rising_edge(clk);
-eCFrame <= '1' when cBaudRate=to_unsigned(0,log2(FRAMECYCLES)) and rx='0' else
-           '0' when cBaudRate=to_unsigned(FRAMECYCLES-2,log2(FRAMECYCLES)) else
+eCFramer <= '0' when rst='1' else eCFrame when rising_edge(clk);
+eCFrame <= '1' when cSymbolCycles=to_unsigned(0,log2(SYMBOLCYCLES)) and cFrameSymbols=to_unsigned(0,log2(FRAMEBITS)) and rx='0' else
+           '0' when cFrameSymbols=to_unsigned(FRAMEBITS,log2(FRAMEBITS)) else
             eCFramer;
 
--- Counter for all the frame 
-process(clk)
+-- Counter for the symbols 
+process(rst, clk)
 begin
-    if(rising_edge(clk)) then
+    if rst='1' then
+        cSymbolCycles <= (others =>'0');
+        cFrameSymbols <= (others =>'0');
+    elsif(rising_edge(clk)) then
         if eCFramer='1' then 
-            if cBaudRate=to_unsigned(FRAMECYCLES-1,log2(FRAMECYCLES)) then
-                cBaudRate <= (others=>'0');
+            if cSymbolCycles=to_unsigned(SYMBOLCYCLES-1,log2(SYMBOLCYCLES)) then
+                cSymbolCycles <= (others=>'0');
             else
-                cBaudRate <= cBaudRate + 1;
-            end if;
-            if cHalfBit=to_unsigned(HALFSYMBOLCYCLES-1,log2(HALFSYMBOLCYCLES)) then
-                cHalfBit <= (others=>'0');
-            else
-                cHalfBit <= cHalfBit + 1;
+                cSymbolCycles <= cSymbolCycles + 1;
             end if;
         end if;
+        if eHalfBit='1' then 
+            if cFrameSymbols=to_unsigned(FRAMEBITS,log2(FRAMEBITS)) then
+                cFrameSymbols <= (others=>'0');
+            else
+                cFrameSymbols <= cFrameSymbols + 1;
+            end if;
+        end if;
+        
     end if;
 end process;
 
 -- '1' if half bit reached.
-eHalfBit <= '1' when eCFramer='1' and cHalfBit=to_unsigned(HALFSYMBOLCYCLES-2,log2(HALFSYMBOLCYCLES)) else '0';
+eHalfBit <= '1' when eCFramer='1' and cSymbolCycles=to_unsigned((HALFSYMBOLCYCLES), log2(HALFSYMBOLCYCLES)) else '0';
 
 -- Shift Register
 process(clk)
@@ -87,6 +95,8 @@ begin
         end if;
     end if;
 end process;
+
+dataOut <= shiftReg(DATABITS downto 1);
 
 
 end arch;
