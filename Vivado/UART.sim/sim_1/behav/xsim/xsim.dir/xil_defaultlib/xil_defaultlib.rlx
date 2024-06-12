@@ -1,0 +1,9 @@
+0.7
+2020.2
+Apr 18 2022
+16:05:34
+C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/Nexys/NexysTop.vhd,1718195968,vhdl,C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/uartRX_tb.vhd,,,nexystop,,,,,,,,
+C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd,1718197316,vhdl,,,,uartrx,,,,,,,,
+C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartTX.vhd,1718210281,vhdl,C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/uartTX_tb.vhd,,,uarttx,,,,,,,,
+C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/uartRX_tb.vhd,1718200153,vhdl,,,,uartrx_tb,,,,,,,,
+C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/uartTX_tb.vhd,1718209725,vhdl,,,,uarttx_tb,,,,,,,,
