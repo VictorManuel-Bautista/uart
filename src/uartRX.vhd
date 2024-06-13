@@ -15,6 +15,7 @@ port(
     clk: in std_logic;
     rst: in std_logic;
     rx:  in std_logic;
+    finish: out std_logic;
     dataOut: out std_logic_vector(DATABITS-1 downto 0)
 );
 end uartRX;
@@ -105,6 +106,6 @@ end process;
 
 -- Output data.
 dataOut <= shiftReg(DATABITS downto 1);
-
+finish <= '1' when cFrameSymbols=to_unsigned(FRAMEBITS,log2(FRAMEBITS)) and eCFramer='1' else '0';
 
 end arch;
