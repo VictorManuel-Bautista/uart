@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Module name="TangNanoTop"/>
+<Module name="uartTX" Register="33" Lut="74" T_Register="33(33)" T_Lut="74(74)"/>

@@ -71,7 +71,7 @@ begin
 end process;
 
 -- Instancia de la entidad uartRX
-uut: entity work.NexysTop
+uut: entity work.EchoServer
     generic map(
         FCLKMHZ => FCLKMHZ,
         DATABITS => DATABITS,
@@ -81,7 +81,7 @@ uut: entity work.NexysTop
     )
     port map (
         clk => clk,
-        nrst => rst,
+        rst => rst,
         rx => rx,
         tx => tx,
         LED => LED
@@ -91,9 +91,9 @@ uut: entity work.NexysTop
 stim_process: process
 begin
     -- Esperar algunos ciclos de reloj
-    rst <= '0';
-    wait for 10 * clk_period;
     rst <= '1';
+    wait for 10 * clk_period;
+    rst <= '0';
     sendDATA(std_logic_vector(to_unsigned(48, DATABITS)), rx);
 
     -- Termina la simulación

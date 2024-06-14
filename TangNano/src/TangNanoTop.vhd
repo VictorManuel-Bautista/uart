@@ -42,7 +42,6 @@ rst <= not nrst;
 
 UART : uartRX port map(clk => clk, rst => rst, rx => rx, dataOut => dataOutUART);
 
-
 eRX <= '1' when dataOutUART = std_logic_vector(to_unsigned(49, 8)) else '0';
 
 R <= rx;

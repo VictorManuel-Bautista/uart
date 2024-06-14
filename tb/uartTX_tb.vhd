@@ -32,9 +32,9 @@ begin
 clk_process: process
 begin
     while true loop
-        clk <= '0';
-        wait for clk_period / 2;
         clk <= '1';
+        wait for clk_period / 2;
+        clk <= '0';
         wait for clk_period / 2;
     end loop;
 end process;
@@ -61,8 +61,8 @@ stim_process: process
 begin
     -- Esperar algunos ciclos de reloj
     rst <= '1';
-    dataSent <= std_logic_vector(to_unsigned(49, DATABITS));
     start <= '0';
+    dataSent <= std_logic_vector(to_unsigned(49, DATABITS));
     wait for 10 * clk_period;
     rst <= '0';
     wait for 10*clk_period;

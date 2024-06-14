@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity EchoServer is
 generic(
-    FCLKMHZ:   integer := 100;
+    FCLKMHZ:   integer := 27;
     DATABITS:  integer := 8;
     STOPBIT:   integer := 1;
     PARITYBIT: integer := 0;
@@ -12,7 +12,7 @@ generic(
 );
 port(
     clk : in std_logic;
-    rst: in std_logic;
+    nrst: in std_logic;
     rx: in std_logic;
     tx: out std_logic;
     LED: out std_logic
@@ -23,7 +23,7 @@ architecture arch of EchoServer is
     
 component uartRX is
 generic(
-    FCLKMHZ:   integer := 100;
+    FCLKMHZ:   integer := 27;
     DATABITS:  integer := 8;
     STOPBIT:   integer := 1;
     PARITYBIT: integer := 1;
@@ -40,7 +40,7 @@ end component;
 
 component uartTX is
 generic(
-    FCLKMHZ:   integer := 100;
+    FCLKMHZ:   integer := 27;
     DATABITS:  integer := 8;
     STOPBIT:   integer := 1;
     PARITYBIT: integer := 1;
@@ -55,12 +55,15 @@ port(
 );
 end component;
 
+signal rst : std_logic;
 signal cRGB : unsigned (2 downto 0);
 signal dataUART : std_logic_vector(7 downto 0);
 signal finishRx : std_logic;
 constant KEY : integer := 49; -- key ASCII '1' in decimal
 
 begin
+
+rst <= not nrst;
 
 -- RX Statements
 UART_RX_BLOCK : uartRX

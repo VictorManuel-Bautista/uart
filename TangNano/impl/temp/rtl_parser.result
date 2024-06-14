@@ -1,19 +1,27 @@
 [
  {
-  "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+  "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
   "InstLine" : 5,
-  "InstName" : "TangNanoTop",
-  "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
+  "InstName" : "EchoServer",
+  "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
   "ModuleLine" : 5,
-  "ModuleName" : "TangNanoTop",
+  "ModuleName" : "EchoServer",
   "SubInsts" : [
    {
-    "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/TangNanoTop.vhd",
-    "InstLine" : 43,
-    "InstName" : "UART",
+    "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
+    "InstLine" : 69,
+    "InstName" : "UART_RX_BLOCK",
     "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
     "ModuleLine" : 6,
     "ModuleName" : "uartRX"
+   },
+   {
+    "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
+    "InstLine" : 74,
+    "InstName" : "UART_TX_BLOCK",
+    "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartTX.vhd",
+    "ModuleLine" : 6,
+    "ModuleName" : "uartTX"
    }
   ]
  }

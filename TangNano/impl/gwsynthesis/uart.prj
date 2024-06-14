@@ -4,8 +4,9 @@
     <Version>beta</Version>
     <Device id="GW1NZ-1" package="QFN48" speed="6" partNumber="GW1NZ-LV1QN48C6/I5"/>
     <FileList>
+        <File path="C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd" type="vhdl"/>
         <File path="C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd" type="vhdl"/>
-        <File path="C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\TangNanoTop.vhd" type="vhdl"/>
+        <File path="C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd" type="vhdl"/>
     </FileList>
     <OptionList>
         <Option type="disable_insert_pad" value="0"/>
@@ -14,7 +15,7 @@
         <Option type="output_file" value="C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\uart.vg"/>
         <Option type="print_all_synthesis_warning" value="0"/>
         <Option type="ram_rw_check" value="0"/>
-        <Option type="top_module" value="TangNanoTop"/>
+        <Option type="top_module" value="uartTX"/>
         <Option type="verilog_language" value="verilog-2001"/>
         <Option type="vhdl_language" value="vhdl-2008"/>
     </OptionList>
