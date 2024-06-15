@@ -74,13 +74,19 @@ begin
             else
                 cSymbolCycles <= cSymbolCycles + 1;
             end if;
+        else 
+            cSymbolCycles <= (others=>'0');
         end if;
-        if eHalfBit='1' then 
-            if cFrameSymbols=to_unsigned(FRAMEBITS,log2(FRAMEBITS)) then
-                cFrameSymbols <= (others=>'0');
-            else
-                cFrameSymbols <= cFrameSymbols + 1;
+        if eCFramer='1' then
+            if eHalfBit='1' then 
+                if cFrameSymbols=to_unsigned(FRAMEBITS,log2(FRAMEBITS)) then
+                    cFrameSymbols <= (others=>'0');
+                else
+                    cFrameSymbols <= cFrameSymbols + 1;
+                end if;
             end if;
+        else
+            cFrameSymbols <= (others=>'0');
         end if;
     end if;
 end process;

@@ -15,7 +15,9 @@ port(
     nrst: in std_logic;
     rx: in std_logic;
     tx: out std_logic;
-    LED: out std_logic
+    LEDR: out std_logic;
+    LEDG: out std_logic;
+    LEDB: out std_logic
 );
 end EchoServer;
 
@@ -56,7 +58,6 @@ port(
 end component;
 
 signal rst : std_logic;
-signal cRGB : unsigned (2 downto 0);
 signal dataUART : std_logic_vector(7 downto 0);
 signal finishRx : std_logic;
 constant KEY : integer := 49; -- key ASCII '1' in decimal
@@ -76,6 +77,8 @@ generic map(FCLKMHZ, DATABITS, STOPBIT, PARITYBIT, BAUDRATE)
 port map(clk => clk, rst => rst, tx => tx, start => finishRx, dataSent => dataUART);
 
 -- LED brigth if received data=='1' ASCII
-LED <= '1' when dataUART = std_logic_vector(to_unsigned(KEY, 8)) else '0';
+LEDR <= '0' when dataUART = std_logic_vector(to_unsigned(KEY, 8)) else '1';
+LEDG <= '1';
+LEDB <= '1';
 
 end arch;

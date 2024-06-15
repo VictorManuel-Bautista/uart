@@ -66,10 +66,19 @@ begin
     wait for 10 * clk_period;
     rst <= '0';
     wait for 10*clk_period;
+    wait until rising_edge(clk);
     start <= '1';
-    wait for clk_period;
+    wait until rising_edge(clk);
     start <= '0';
-
+    
+    wait for 1ms;
+    dataSent <= std_logic_vector(to_unsigned(211, DATABITS));
+    wait for 10*clk_period;
+    wait until rising_edge(clk);
+    start <= '1';
+    wait until rising_edge(clk);
+    start <= '0';
+    
     wait;
 end process;
 

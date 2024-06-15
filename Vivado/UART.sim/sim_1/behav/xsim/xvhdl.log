@@ -1,2 +1,4 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/uartTX_tb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'uartTX_tb'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'uartRX'
+INFO: [VRFC 10-163] Analyzing VHDL file "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/EchoServer_tb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'EchoServer_tb'

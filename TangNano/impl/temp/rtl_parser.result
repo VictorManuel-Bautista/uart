@@ -9,7 +9,7 @@
   "SubInsts" : [
    {
     "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
-    "InstLine" : 69,
+    "InstLine" : 70,
     "InstName" : "UART_RX_BLOCK",
     "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd",
     "ModuleLine" : 6,
@@ -17,7 +17,7 @@
    },
    {
     "InstFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd",
-    "InstLine" : 74,
+    "InstLine" : 75,
     "InstName" : "UART_TX_BLOCK",
     "ModuleFile" : "C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartTX.vhd",
     "ModuleLine" : 6,

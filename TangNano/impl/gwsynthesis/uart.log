@@ -2,18 +2,17 @@ GowinSynthesis start
 Running parser ...
 Analyzing VHDL file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd'
 Analyzing entity 'echoserver'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd":5)
-Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd":22)
+Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd":24)
 Analyzing VHDL file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd'
 Analyzing entity 'uartrx'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":6)
 Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":23)
 Analyzing VHDL file 'C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd'
 Analyzing entity 'uarttx'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":6)
 Analyzing architecture 'arch'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":23)
-Processing 'uartTX(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":6)
-WARN  (EX4749) : 'loadsignal' should be on the sensitivity list of the process. Signal missing is added and assuming complete sensitivity list specified. RTL design and post-synthesis netlist simulations may differ as a result("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":116)
-WARN  (EX4387) : Incomplete sensitivity list specified, assuming completeness("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":124)
-WARN  (EX4160) : Latch inferred for net 'shiftReg[10]'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":124)
-NOTE  (EX0101) : Current top module is "uartTX"
+Processing 'EchoServer(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\src\EchoServerTangNano.vhd":5)
+Processing 'uartRX(stopbit=1)(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartRX.vhd":6)
+Processing 'uartTX(paritybit=0)(arch)'("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":6)
+NOTE  (EX0101) : Current top module is "EchoServer"
 [5%] Running netlist conversion ...
 Running device independent optimization ...
 [10%] Optimizing Phase 0 completed
@@ -27,44 +26,7 @@ Running inference ...
 Running technical mapping ...
 [60%] Tech-Mapping Phase 0 completed
 [65%] Tech-Mapping Phase 1 completed
-WARN  (DI0003) : Latch inferred for net 'shiftReg[10]';We do not recommend the use of latches in FPGA designs, as they may lead to timing problems("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":124)
 [75%] Tech-Mapping Phase 2 completed
-WARN  (AG0100) : Find logical loop signal : "shiftReg_9_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_9_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_9_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_8_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_8_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_8_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_7_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_7_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_7_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_6_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_6_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_6_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_5_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_5_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_5_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_4_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_4_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_4_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_3_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_3_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_3_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_2_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_2_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_2_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
-WARN  (AG0100) : Find logical loop signal : "shiftReg_1_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_1_s6"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0100) : Find logical loop signal : "shiftReg_1_s3"("C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\src\uartTX.vhd":123)
-WARN  (AG0101) : The netlist is not one directed acyclic graph
 [80%] Tech-Mapping Phase 3 completed
 [90%] Tech-Mapping Phase 4 completed
 [95%] Generate netlist file "C:\Users\Victor\Documents\Gitlab\PERSONAL GITHUB\uart\TangNano\impl\gwsynthesis\uart.vg" completed

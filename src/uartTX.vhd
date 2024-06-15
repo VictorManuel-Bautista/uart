@@ -44,49 +44,46 @@ constant SYMBOLCYCLES : integer := FCLKMHZ * 1000000 / BAUDRATE;
 constant HALFSYMBOLCYCLES : integer := FCLKMHZ * 1000000 / (BAUDRATE * 2);
 
 -- Signals
+signal startr : std_logic;
 signal cSymbolCycles : unsigned(log2(SYMBOLCYCLES)-1 downto 0);
-signal cFrameSymbols : unsigned(log2(FRAMEBITS)-1 downto 0);
+signal cFrameSymbols, cFrameSymbolsr : unsigned(log2(FRAMEBITS)-1 downto 0);
 
-signal eCFrame, eCFrameNext : std_logic;
 signal eNewSymbol : std_logic;
 
 signal shiftReg : std_logic_vector(FRAMEBITS - 1 downto 0);
-signal loadSignal : std_logic_vector(FRAMEBITS -1 downto 0);
+signal shiftRegNext : std_logic_vector(FRAMEBITS - 1 downto 0);
+signal loadSignal : std_logic_vector(FRAMEBITS - 1 downto 0);
 
 begin
 
+startr <= start when rising_edge(clk);
 
 -- Counter of cycles per symbol.
 -- Counter of the frame symbols.
-process(rst, start, clk)
+cFrameSymbols <= (others=>'0') when startr = '1' else
+                 cFrameSymbolsr+1 when cSymbolCycles=to_unsigned(0,log2(SYMBOLCYCLES))  else 
+                 cFrameSymbolsr;
+
+process(rst, clk)
 begin
-    if rst='1' or start='1' then
+    if rst='1' then
         cSymbolCycles <= (others =>'0');
-        cFrameSymbols <= (others =>'0');
+        cFrameSymbolsr <= (others =>'0');
     elsif(rising_edge(clk)) then
-        if cSymbolCycles=to_unsigned(SYMBOLCYCLES,log2(SYMBOLCYCLES)) then
+        if start='1' then
+            cSymbolCycles <= (others =>'0');
+            cFrameSymbolsr <= (others =>'0');
+        elsif cSymbolCycles=to_unsigned(SYMBOLCYCLES-1,log2(SYMBOLCYCLES)) then
             cSymbolCycles <= (others=>'0');
         else
             cSymbolCycles <= cSymbolCycles + 1;
         end if;
-        cFrameSymbols <= cFrameSymbols + 1;
+        cFrameSymbolsr <= cFrameSymbols;
     end if;
 end process;
 
--- Enable during the frame
---eCFrame <= '1' when rising_edge(clk) and cSymbolCycles=to_unsigned(0,log2(SYMBOLCYCLES)) else '0';
-eCFrameNext <= start when cSymbolCycles=to_unsigned(0,log2(SYMBOLCYCLES)) else eCFrame;
-process(rst, clk)
-begin
-    if rst='1' then
-        eCFrame<='0';
-    elsif rising_edge(clk) then
-        eCFrame <= eCFrameNext;
-    end if;
-end process;
-
--- eNewSymbol='1' (pulse) at the start of the new symbol. 
-eNewSymbol <= '1' when eCFrame='1' and cSymbolCycles=to_unsigned((SYMBOLCYCLES), log2(SYMBOLCYCLES)) else '0';
+---- eNewSymbol='1' (pulse) at the start of the new symbol.
+eNewSymbol <= '1' when cSymbolCycles=to_unsigned(SYMBOLCYCLES-1, log2(SYMBOLCYCLES)) else '0';
 
 -- Signal to be loaded to the registers:
 -- Start bit.
@@ -108,21 +105,25 @@ STOP_BLOCK: for i in 1 to STOPBIT generate
     loadSignal(FRAMEBITS - i) <= '1';
 end generate;
 
--- Shift Register of the symbols sampled.
-process(rst, clk, start)
+---- Shift Register of the symbols sampled.
+shiftRegNext <= loadSignal when startr = '1' else shiftReg;
+process(rst, clk)
 begin
-    if rst = '1' or start = '1' then
-        shiftReg <= loadSignal;
+    if rst = '1' then
+        shiftReg <= (others => '1');
     elsif(rising_edge(clk)) then
         if eNewSymbol='1' then
             for b in FRAMEBITS-2 downto 0 loop
-                shiftReg(b) <= shiftReg(b+1);
+                shiftReg(b) <= shiftRegNext(b+1);
             end loop;
+            shiftReg(FRAMEBITS-1) <= '1';
+        else
+            shiftReg <= shiftRegNext;
         end if;
     end if;
 end process;
 
--- Output data.
-tx <= shiftReg(0) when eCFrame='1' else '1';
+---- Output data.
+tx <= shiftReg(0);
 
 end arch;
