@@ -1,8 +1,0 @@
-0.7
-2020.2
-Apr 18 2022
-16:05:34
-C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/TangNano/src/EchoServerTangNano.vhd,1718620987,vhdl,C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/EchoServer_tb.vhd,,,echoserver,,,,,,,,
-C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartRX.vhd,1718620987,vhdl,,,,uartrx,,,,,,,,
-C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/src/uartTX.vhd,1718620987,vhdl,,,,uarttx,,,,,,,,
-C:/Users/Victor/Documents/Gitlab/PERSONAL GITHUB/uart/tb/EchoServer_tb.vhd,1718623169,vhdl,,,,echoserver_tb,,,,,,,,
